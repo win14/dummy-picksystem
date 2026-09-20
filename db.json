@@ -1,0 +1,464 @@
+{
+  "sales": [
+    {
+      "shipping": {
+        "tracking": " "
+      },
+      "extra": {
+        "discount": 0,
+        "extraFee": 0,
+        "insurance": 0
+      },
+      "refund": {
+        "nominal": 0,
+        "refundTransfer": false
+      },
+      "doneDate": null,
+      "isDropship": false,
+      "payment": null,
+      "sourceLink": "https://seller.shopee.co.id/portal/sale/order/238779554266844?deep_and_deferred=1",
+      "reason": null,
+      "source": "SHOPEE",
+      "invoiceSource": "AUTOMATIC",
+      "status": "CREATED",
+      "item": [
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a662a524787c105e422dcab"
+          },
+          "pid": 1,
+          "qty": 3,
+          "price": 52500
+        }
+      ],
+      "sourceInvoiceID": "#260726PP0GV7PV",
+      "customer": {
+        "_id": {
+          "$oid": "5cdfd4f8540ac103b884eb85"
+        },
+        "name": "-",
+        "phone": "-",
+        "address": "-"
+      },
+      "date": {
+        "$date": "2026-07-26T15:40:02.822Z"
+      },
+      "invoiceID": 2026074299,
+      "__v": 0
+    },
+    {
+      "shipping": {
+        "tracking": " "
+      },
+      "extra": {
+        "discount": 0,
+        "extraFee": 0,
+        "insurance": 0
+      },
+      "refund": {
+        "nominal": 0,
+        "refundTransfer": false
+      },
+      "doneDate": null,
+      "isDropship": false,
+      "payment": null,
+      "sourceLink": "https://seller.shopee.co.id/portal/sale/order/238779302239417?utm_content=A8wMSFyb5rVqVXyPAg5kgSZX44D5N8ihk&utm_medium=email&utm_source=noti",
+      "reason": null,
+      "source": "SHOPEE",
+      "invoiceSource": "AUTOMATIC",
+      "status": "CREATED",
+      "item": [
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a6629614787c105e422dc9c"
+          },
+          "pid": 2,
+          "qty": 1,
+          "price": 97000
+        }
+      ],
+      "sourceInvoiceID": "#260726PNS0GY5S",
+      "customer": {
+        "_id": {
+          "$oid": "5cdfd4f8540ac103b884eb85"
+        },
+        "name": "-",
+        "phone": "-",
+        "address": "-"
+      },
+      "date": {
+        "$date": "2026-07-26T15:36:01.575Z"
+      },
+      "invoiceID": 2026074296,
+      "__v": 0
+    },
+    {
+      "shipping": {
+        "tracking": " "
+      },
+      "extra": {
+        "discount": 0,
+        "extraFee": 0,
+        "insurance": 0
+      },
+      "refund": {
+        "nominal": 0,
+        "refundTransfer": false
+      },
+      "doneDate": null,
+      "isDropship": false,
+      "payment": null,
+      "sourceLink": "https://seller.shopee.co.id/portal/sale/order/238774865225857?deep_and_deferred=1",
+      "reason": null,
+      "source": "SHOPEE",
+      "invoiceSource": "AUTOMATIC",
+      "status": "CREATED",
+      "item": [
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a6618094787c105e422dc79"
+          },
+          "pid": 6,
+          "qty": 1,
+          "price": 57500
+        }
+      ],
+      "sourceInvoiceID": "#260726PHMS2241",
+      "customer": {
+        "_id": {
+          "$oid": "5cdfd4f8540ac103b884eb85"
+        },
+        "name": "-",
+        "phone": "-",
+        "address": "-"
+      },
+      "date": {
+        "$date": "2026-07-26T14:22:01.831Z"
+      },
+      "invoiceID": 2026074289,
+      "__v": 0
+    },
+    {
+      "shipping": {
+        "tracking": "260726NMKKDG4M",
+        "method": "Shopee Xpress Instant",
+        "fee": 0
+      },
+      "extra": {
+        "discount": 0,
+        "extraFee": 0,
+        "insurance": 0
+      },
+      "refund": {
+        "nominal": 0,
+        "refundTransfer": false
+      },
+      "doneDate": {
+        "$date": "2026-07-26T05:45:32.164Z"
+      },
+      "isDropship": false,
+      "payment": null,
+      "sourceLink": "https://seller.shopee.co.id/portal/sale/order/238743687241876?utm_content=A8wMELDHtv9e7r2fLWcXYmZdMWCSpGWqM&utm_medium=email&utm_source=noti",
+      "reason": null,
+      "source": "SHOPEE",
+      "invoiceSource": "AUTOMATIC",
+      "status": "DONE",
+      "item": [
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a659eee1b8f4539a0af9fa3"
+          },
+          "pid": 17,
+          "qty": 1,
+          "price": 13000,
+          "profit": 13000
+        },
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a659eee1b8f4539a0af9fa2"
+          },
+          "pid": 6,
+          "qty": 8,
+          "price": 57500,
+          "profit": 4000
+        },
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a659eee1b8f4539a0af9fa1"
+          },
+          "pid": 10,
+          "qty": 1,
+          "price": 97500,
+          "profit": 11000
+        },
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a659eee1b8f4539a0af9fa0"
+          },
+          "pid": 574,
+          "qty": 1,
+          "price": 4500,
+          "profit": 4500
+        }
+      ],
+      "sourceInvoiceID": "#260726NMKKDG4M",
+      "customer": {
+        "_id": {
+          "$oid": "62f1fe3195b0801048ebdd26"
+        },
+        "name": "tieri",
+        "phone": "******74",
+        "address": "******arung Serab, Ciledug (Blok B4), KOTA TANGERANG, CILEDUG, BANTEN, ID, 15153\n08EJ"
+      },
+      "date": {
+        "$date": "2026-07-26T05:44:01.490Z"
+      },
+      "invoiceID": 2026074207,
+      "__v": 0,
+      "photo": null
+    },
+    {
+      "shipping": {
+        "tracking": "11004114800699",
+        "method": "AntarAja Economy",
+        "fee": 0
+      },
+      "extra": {
+        "discount": 0,
+        "extraFee": 0,
+        "insurance": 0
+      },
+      "refund": {
+        "nominal": 0,
+        "refundTransfer": false
+      },
+      "doneDate": {
+        "$date": "2026-07-26T08:45:10.852Z"
+      },
+      "isDropship": false,
+      "payment": null,
+      "sourceLink": "https://seller.shopee.co.id/portal/sale/order/238746417207072?utm_content=A8wMEPejRTb1t67QByLkZLg2K7PMsbsSF&utm_medium=email&utm_source=noti",
+      "reason": null,
+      "source": "SHOPEE",
+      "invoiceSource": "AUTOMATIC",
+      "status": "DONE",
+      "item": [
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a65b3631b8f4539a0afa3bf"
+          },
+          "pid": 10,
+          "qty": 1,
+          "price": 97500,
+          "profit": 16500
+        },
+        {
+          "variant": null,
+          "_id": {
+            "$oid": "6a65b3631b8f4539a0afa3be"
+          },
+          "pid": 574,
+          "qty": 2,
+          "price": 4500,
+          "profit": 4500
+        }
+      ],
+      "sourceInvoiceID": "#260726NQ4XWDS0",
+      "customer": {
+        "_id": {
+          "$oid": "62eba4962d74841064182f60"
+        },
+        "name": "R******i",
+        "phone": "******89",
+        "address": "******ang Macan Blok B1 No.110, KOTA JAKARTA BARAT, KEBON JERUK, DKI JAKARTA, ID, 11510"
+      },
+      "date": {
+        "$date": "2026-07-26T06:32:01.725Z"
+      },
+      "invoiceID": 2026074219,
+      "__v": 0,
+      "photo": null
+    }
+  ],
+  "employee": [
+    {
+      "name": "Puji"
+    },
+    {
+      "name": "Ahmad"
+    },
+    {
+      "name": "Desi"
+    }
+  ],
+  "products": [
+    {
+      "tags": null,
+      "isBundle": false,
+      "nameConvert": [
+        "Uno R3 - Arduino Uno Complatible Atmega328p CH340",
+        "Uno R3 - Uno Compatible Atmega328p CH340 Uno R3 SMD"
+      ],
+      "pid": 1,
+      "name": "Arduino UNO SMD",
+      "prices": [
+        {
+          "_id": {
+            "$oid": "64fc997369543f0f881c4f6e"
+          },
+          "qty": 1,
+          "price": 52000
+        }
+      ],
+      "bundle": null,
+      "__v": 0,
+      "url": {
+        "tokopedia": "https://www.tokopedia.com/starlectric/tlc5940-constant-current-led-driver"
+      },
+      "threshold": null,
+      "barcode": "0001"
+    },
+    {
+      "tags": null,
+      "isBundle": false,
+      "nameConvert": [
+        "Uno R3 - Arduino Uno DIP Complatible Atmega328p",
+        "Uno R3 DIP - Uno Compatible Atmega328p Uno R3 DIP Version"
+      ],
+      "pid": 2,
+      "name": "Arduino UNO DIP",
+      "prices": [
+        {
+          "_id": {
+            "$oid": "6637ae7349f99b281000d848"
+          },
+          "qty": 1,
+          "price": 93500
+        }
+      ],
+      "bundle": null,
+      "__v": 0,
+      "threshold": null,
+      "url": {
+        "tokopedia": "https://www.tokopedia.com/starlectric/tlc5947-24-channel-12-bit-pwm-led-driver"
+      },
+      "barcode": "0002"
+    },
+    {
+      "tags": null,
+      "isBundle": false,
+      "nameConvert": [
+        "Arduino Uno R3 CH340 clone + Kabel",
+        "Arduino Uno R3",
+        "Arduino Uno R3 SMD Clone CH340 + USB Cable",
+        "Uno R3 - Arduino Uno Complatible Atmega328p CH340 dengan Kabel Cable SMD",
+        "Uno R3 with Cable - Uno Complatible Atmega328p dengan kabel SMD",
+        "Uno R3 - Arduino Uno Complatible Atmega328p CH340 dengan Kabel Cable SMD version"
+      ],
+      "pid": 6,
+      "name": "Arduino Uno R3 CH340 with Cable",
+      "prices": [
+        {
+          "_id": {
+            "$oid": "69ea227d2a1fda39ccd4bb9a"
+          },
+          "qty": 1,
+          "price": 57500
+        }
+      ],
+      "bundle": null,
+      "__v": 0,
+      "threshold": null,
+      "url": {
+        "tokopedia": "https://www.tokopedia.com/starlectric/arduino-uno-r3-ch340-clone-kabel-c726",
+        "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/14yqf6-jual-arduino-uno-r3?keyword="
+      },
+      "barcode": "0006"
+    },
+    {
+      "tags": null,
+      "isBundle": false,
+      "nameConvert": [
+        "Arduino Uno R3 ATMega328P DIP Clone + USB Cable",
+        "Uno R3 With Cable - Arduino Uno DIP Complatible Atmega328p Dengan Kabel",
+        "Uno R3 With Cable - Arduino Uno Complatible Atmega328p Dengan Kabel",
+        "Uno R3 DIP with Cable Uno Compatible Atmega328p dengan kabel"
+      ],
+      "pid": 10,
+      "name": "Arduino Uno R3 DIP clone + Kabel",
+      "prices": [
+        {
+          "_id": {
+            "$oid": "6637ae5e49f99b281000d847"
+          },
+          "qty": 1,
+          "price": 97500
+        }
+      ],
+      "bundle": null,
+      "__v": 0,
+      "threshold": null,
+      "url": {
+        "tokopedia": "https://www.tokopedia.com/starlectric/uno-r3-with-cable-arduino-uno-complatible-atmega328p-dengan-kabel",
+        "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/y25x3y-jual-uno-r3-with-cable-arduino-uno-dip-complatible-atmega328p-dengan-kabel?category_slugs=elektronik%2Fkomponen-elektronik&keyword="
+      },
+      "barcode": "0010"
+    },
+    {
+      "tags": null,
+      "isBundle": false,
+      "nameConvert": [
+        "Breadboard 400 Tie Point",
+        "Mini Breadboard 400 tie point"
+      ],
+      "pid": 17,
+      "name": "Breadboard 400 Tie Point",
+      "prices": [
+        {
+          "_id": {
+            "$oid": "60019593266e5709e8756296"
+          },
+          "qty": 1,
+          "price": 13000
+        }
+      ],
+      "bundle": null,
+      "__v": 0,
+      "threshold": null,
+      "url": {
+        "tokopedia": "https://www.tokopedia.com/starlectric/breadboard-400-tie-point",
+        "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/14k8pl-jual-breadboard-400-tie-point?category_slugs=elektronik%2Fkomponen-elektronik&keyword="
+      },
+      "barcode": "0017"
+    },
+    {
+      "tags": [],
+      "isBundle": false,
+      "nameConvert": [
+        "LED 5MM Difussed 5 MM Lampu LED Kecil 5 Warna Merah Kuning Hijau Biru Putih 15 Pcs"
+      ],
+      "pid": 574,
+      "name": "LED 5MM 15 PCS 5 Warna",
+      "prices": [
+        {
+          "_id": {
+            "$oid": "68ab1d87c6e5d9393441f960"
+          },
+          "qty": 1,
+          "price": 4500
+        }
+      ],
+      "bundle": [],
+      "__v": 0,
+      "barcode": "0574"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "server": {
+    "ip": "",
+    "port": ""
+  },
+  "log": {
+    "path": ""
+  },
+  "db": {
+    "filename": "db.json",
+    "path": "/Users/winardi/Project/picker_system/dummy_server"
+  }
+}
