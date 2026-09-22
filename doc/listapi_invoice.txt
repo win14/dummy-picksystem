@@ -1,0 +1,47 @@
+INVOICE
+
+PATH : /api/v1/invoice/process
+HEADER : -
+BODY :
+    - pickerName (M) String : nama dari picker
+
+CONTOH 
+
+curl --request GET \
+  --url http://localhost:3000/api/v1/invoice/process \
+  --header 'Accept: */*' \
+  --header 'Accept-Encoding: gzip, deflate, br' \
+  --header 'Connection: keep-alive' \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: EchoapiRuntime/1.1.0' \
+  --data '{
+    "invoiceID" : "2026074289",
+    "pickerName" : "puji"
+}'
+
+RESPONSE
+
+HTTP : 200
+{
+	"status": "PICKING",
+	"source": "SHOPEE",
+	"item": [
+		{
+			"variant": null,
+			"_id": {
+				"$oid": "6a6618094787c105e422dc79"
+			},
+			"pid": 6,
+			"qty": 1,
+			"price": 57500,
+			"name": "Arduino Uno R3 CH340 with Cable"
+		}
+	],
+	"invoiceID": 2026074289
+}
+
+OTHER RESPONSE
+
+201 SUCCESS_WITH_NO_DATA    :  tidak ada data process ketika mode otomatis
+400 BAD REQUEST             :  body req tidak sesuai, pickername tidak sesuai ketika manual
+404 DATA_NOT_FOUND          : data tidak dtemukan

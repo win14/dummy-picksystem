@@ -51,7 +51,7 @@ export function getDetailInvoice(invoiceID) {
   }
 }
 
-export function getProcessInvoice() {
+export function findLastProcessInvoice() {
   if (db) {
     try {
       const res = db.data?.sales.find((data) => data.status === STATUS.PROCESS);
@@ -60,15 +60,34 @@ export function getProcessInvoice() {
   }
 }
 
-export async function updateInvoice(newData, invoiceID) {
+export function findPickingInvoice(pickname) {
   if (db) {
     try {
-      const index = db.data?.sales.findIndex(
-        (data) => data.invoiceID === Number(invoiceID),
+      const res = db.data?.sales.find(
+        (data) =>
+          data.status === STATUS.PICKING && data.pickerName === pickname,
       );
-      res.data.sales[index] = { ...res.data.sales[index], newData };
+      return res;
+    } catch (err) {}
+  }
+}
+
+export async function updateInvoice(newData, invoiceID, index = null) {
+  if (db) {
+    try {
+      let indexInvoice = index;
+      if (index == null) {
+        indexInvoice = db.data?.sales.findIndex(
+          (data) => data.invoiceID === Number(invoiceID),
+        );
+      }
+
+      db.data.sales[indexInvoice] = {
+        ...db.data.sales[indexInvoice],
+        ...newData,
+      };
       await db.write();
-      return res.data.sales[index];
+      return db.data.sales[indexInvoice];
     } catch (err) {}
   }
 }
@@ -78,6 +97,15 @@ export function getBarcodeItem(pid) {
     try {
       const res = db.data?.products.find((data) => data.pid === Number(pid));
       return res.barcode;
+    } catch (err) {}
+  }
+}
+
+export function findProductName(pid) {
+  if (db) {
+    try {
+      const res = db.data?.products.find((data) => data.pid === Number(pid));
+      return res.name;
     } catch (err) {}
   }
 }
