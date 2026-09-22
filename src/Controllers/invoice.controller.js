@@ -3,10 +3,11 @@ import {
   updateInvoice,
   findPickingInvoice,
   findLastProcessInvoice,
+  getBarcodeItem,
 } from "../Services/lowJSON.js";
 import { HTTP_STATUS, STATUS } from "../Utils/enum.js";
 import { transformOutput } from "../Utils/utils.js";
-import { invoiceSchema } from "../schema/invoice.output.schema.js";
+import { invoiceSchema, itemSchema } from "../schema/invoice.output.schema.js";
 
 export async function getInvoiceProcess(req, res) {
   //check if request is manual (with invoiceID or without invoiceID)
@@ -153,5 +154,102 @@ export async function pendingPickingInvocie(req, res) {
     //bad request invoiceID or pickerName not found
     console.log(`[INVOICE] field invoiceID atau pickerName mandatory`);
     res.status(HTTP_STATUS.BAD_REQUEST).json({});
+  }
+}
+
+export async function updateItemPickStatus(req, res) {
+  const { invoiceID, pickerName, barcode, pid } = req.body;
+
+  const invoiceDetail = getDetailInvoice(invoiceID);
+  if (invoiceDetail) {
+    if (invoiceDetail.status != STATUS.PICKING) {
+      console.log(`[INVOICE][${invoiceID}] Status di invoice bukan PICKING`);
+      res.status(HTTP_STATUS.BAD_REQUEST).json({});
+      return;
+    }
+    if (invoiceDetail.pickerName == pickerName) {
+      if (invoiceDetail.item && Array.isArray(invoiceDetail.item)) {
+        const items = invoiceDetail.item || [];
+        const checkItemIndex = items.reduce((acc, item, index) => {
+          if (item.pid == pid) {
+            acc.push(index);
+          }
+          return acc;
+        }, []);
+        if (checkItemIndex.length > 0) {
+          const barcodeItem = getBarcodeItem(pid);
+          if (barcodeItem == barcode) {
+            //update status itemnya
+            for (let i = 0; i < checkItemIndex.length; i++) {
+              const indexItem = checkItemIndex[i];
+              items[indexItem] = {
+                ...items[indexItem],
+                pickStatus: true,
+                pickTime: new Date(),
+              };
+              invoiceDetail.item = items;
+              const resp = await updateInvoice(invoiceDetail, invoiceID);
+              const addData = items.reduce(
+                (acc, item, index) => {
+                  if (item.pickStatus === true) {
+                    acc.counterPick++;
+                    acc.pidPick.push(item.pid);
+                  } else {
+                    acc.counterNotPick++;
+                    acc.pidNotPick.push(item.pid);
+                  }
+                  return acc;
+                },
+                {
+                  counterPick: 0,
+                  counterNotPick: 0,
+                  pidNotPick: [],
+                  pidPick: [],
+                },
+              );
+
+              if (addData.counterPick == items.length) {
+                res
+                  .status(HTTP_STATUS.SUCCESS_COMPLETED)
+                  .json(transformOutput({ ...resp, ...addData }, itemSchema));
+              } else {
+                res
+                  .status(HTTP_STATUS.SUCCESS)
+                  .json(transformOutput({ ...resp, ...addData }, itemSchema));
+              }
+            }
+          } else {
+            //barocde tidak sama
+            console.log(
+              `[INVOICE][${invoiceID}] barcode ${barcode} tidak sama dengan yg terdaftar di product`,
+            );
+            res.status(HTTP_STATUS.BAD_REQUEST).json({});
+          }
+        } else {
+          //pid not found
+          // item kosong
+          console.log(
+            `[INVOICE][${invoiceID}] PID ${pid} tidak ditemukan didalam invoice`,
+          );
+          res.status(HTTP_STATUS.NOT_FOUND).json({});
+        }
+      } else {
+        // item kosong
+        console.log(
+          `[INVOICE][${invoiceID}] ${pickerName} item di invoice kosong`,
+        );
+        res.status(HTTP_STATUS.BAD_REQUEST).json({});
+      }
+    } else {
+      // picker not same
+      console.log(
+        `[INVOICE][${invoiceID}] ${pickerName} tidak sama dengan yg di invoice`,
+      );
+      res.status(HTTP_STATUS.BAD_REQUEST).json({});
+    }
+  } else {
+    //invoice not found
+    console.log(`[INVOICE] Invoice Nomor : ${invoiceID} tidak ditemukan`);
+    res.status(HTTP_STATUS.NOT_FOUND).json({});
   }
 }

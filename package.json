@@ -2,7 +2,7 @@
   "name": "dummy_server",
   "version": "1.0.0",
   "description": "dummey server for pick device",
-  "type" : "module",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^5.2.1",
     "express-winston": "^4.2.0",
+    "joi": "^18.2.9",
     "lowdb": "^7.0.1",
     "winston": "^3.19.0"
   }
