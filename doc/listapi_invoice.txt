@@ -107,26 +107,30 @@ OTHER RESPONSE
 
 ==========================================================================================================================
 
-PATH : /api/v1/invoice/pendingpicking
+PATH : /api/v1/invoice/checkitem
 HEADER : -
 BODY :
     - pickerName (M) String : nama dari picker
-    - invoiceID  (M) Number : nomor invoice dari scan manual
-DESCRIPTION : api ini untuk mengubah status PICKING menjadi created kembali, menghapus picker name, dan status pick item.
-              invoice yg discan harus status PICKING.
+    - invoiceID  (M) Number : nomor invoice 
+	- barcode	 (M) String	: kode barcode
+	- pid		 (M) Number : Pid dari product 
+
+DESCRIPTION : api ini untuk chceck item. akan mengembalikan pid yg belum dicheck, sudah dicek, dan jumlah masing2
 
 CONTOH 
 
-curl --request GET \
-  --url http://localhost:3000/api/v1/invoice/pendingpicking \
+curl --request POST \
+  --url http://localhost:3000/api/v1/invoice/checkitem \
   --header 'Accept: */*' \
   --header 'Accept-Encoding: gzip, deflate, br' \
   --header 'Connection: keep-alive' \
   --header 'Content-Type: application/json' \
   --header 'User-Agent: EchoapiRuntime/1.1.0' \
   --data '{
-    "invoiceID" : "2026074289",
-    "pickerName" : "puji"
+    "invoiceID" : "2026074207",
+    "pickerName" : "desi",
+    "barcode" : "0001",
+    "pid" : 1
 }'
 
 RESPONSE
@@ -154,6 +158,111 @@ HTTP : 200
 
 OTHER RESPONSE
 
+201 SUCCESS_WITH_NO_DATA    :  tidak ada data process ketika mode otomatis
+400 BAD REQUEST             :  body req tidak sesuai, pickername tidak sesuai ketika manual
+404 DATA_NOT_FOUND          : data tidak dtemukan
+
+==============================================================================================================================================
+
+PATH : /api/v1/invoice/checkitem
+HEADER : -
+BODY :
+    - pickerName (M) String : nama dari picker
+    - invoiceID  (M) Number : nomor invoice dari scan manual
+
+DESCRIPTION : api ini untuk mengubah status PICKING menjadi created kembali, menghapus picker name, dan status pick item.
+              invoice yg discan harus status PICKING.
+
+CONTOH 
+
+curl --request GET \
+  --url http://localhost:3000/api/v1/invoice/checkitem \
+  --header 'Accept: */*' \
+  --header 'Accept-Encoding: gzip, deflate, br' \
+  --header 'Connection: keep-alive' \
+  --header 'Content-Type: application/json' \
+  --header 'User-Agent: EchoapiRuntime/1.1.0' \
+  --data '{
+    "invoiceID" : "2026074289",
+    "pickerName" : "puji"
+}'
+
+RESPONSE
+
+HTTP : 200
+{
+	"status": "PICKING",
+	"source": "SHOPEE",
+	"item": [
+		{
+			"variant": null,
+			"_id": {
+				"$oid": "6a659eee1b8f4539a0af9fa3"
+			},
+			"pid": 17,
+			"qty": 1,
+			"price": 13000,
+			"profit": 13000,
+			"pickStatus": false,
+			"pickTime": null,
+			"name": "Breadboard 400 Tie Point"
+		},
+		{
+			"variant": null,
+			"_id": {
+				"$oid": "6a659eee1b8f4539a0af9fa2"
+			},
+			"pid": 6,
+			"qty": 8,
+			"price": 57500,
+			"profit": 4000,
+			"pickStatus": false,
+			"pickTime": null,
+			"name": "Arduino Uno R3 CH340 with Cable"
+		},
+		{
+			"variant": null,
+			"_id": {
+				"$oid": "6a659eee1b8f4539a0af9fa1"
+			},
+			"pid": 10,
+			"qty": 1,
+			"price": 97500,
+			"profit": 11000,
+			"pickStatus": true,
+			"pickTime": "2026-09-23T07:37:55.389Z",
+			"name": "Arduino Uno R3 DIP clone + Kabel"
+		},
+		{
+			"variant": null,
+			"_id": {
+				"$oid": "6a659eee1b8f4539a0af9fa0"
+			},
+			"pid": 574,
+			"qty": 1,
+			"price": 4500,
+			"profit": 4500,
+			"pickStatus": false,
+			"pickTime": null,
+			"name": "LED 5MM 15 PCS 5 Warna"
+		}
+	],
+	"invoiceID": 2026074207,
+	"counterPick": 1,
+	"counterNotPick": 3,
+	"pidNotPick": [
+		17,
+		6,
+		574
+	],
+	"pidPick": [
+		10
+	]
+}
+
+OTHER RESPONSE
+
+202 SUCCESS_COMPLTED		: pid item sudah check semua
 201 SUCCESS_WITH_NO_DATA    :  tidak ada data process ketika mode otomatis
 400 BAD REQUEST             :  body req tidak sesuai, pickername tidak sesuai ketika manual
 404 DATA_NOT_FOUND          : data tidak dtemukan
