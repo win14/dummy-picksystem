@@ -164,7 +164,7 @@ OTHER RESPONSE
 
 ==============================================================================================================================================
 
-PATH : /api/v1/invoice/checkitem
+PATH : /api/v1/invoice/pendingpicking
 HEADER : -
 BODY :
     - pickerName (M) String : nama dari picker
@@ -191,73 +191,23 @@ RESPONSE
 
 HTTP : 200
 {
-	"status": "PICKING",
+	"status": "CREATED",
 	"source": "SHOPEE",
 	"item": [
 		{
 			"variant": null,
 			"_id": {
-				"$oid": "6a659eee1b8f4539a0af9fa3"
+				"$oid": "6a662a524787c105e422dcab"
 			},
-			"pid": 17,
-			"qty": 1,
-			"price": 13000,
-			"profit": 13000,
+			"pid": 1,
+			"qty": 3,
+			"price": 52500,
 			"pickStatus": false,
 			"pickTime": null,
-			"name": "Breadboard 400 Tie Point"
-		},
-		{
-			"variant": null,
-			"_id": {
-				"$oid": "6a659eee1b8f4539a0af9fa2"
-			},
-			"pid": 6,
-			"qty": 8,
-			"price": 57500,
-			"profit": 4000,
-			"pickStatus": false,
-			"pickTime": null,
-			"name": "Arduino Uno R3 CH340 with Cable"
-		},
-		{
-			"variant": null,
-			"_id": {
-				"$oid": "6a659eee1b8f4539a0af9fa1"
-			},
-			"pid": 10,
-			"qty": 1,
-			"price": 97500,
-			"profit": 11000,
-			"pickStatus": true,
-			"pickTime": "2026-09-23T07:37:55.389Z",
-			"name": "Arduino Uno R3 DIP clone + Kabel"
-		},
-		{
-			"variant": null,
-			"_id": {
-				"$oid": "6a659eee1b8f4539a0af9fa0"
-			},
-			"pid": 574,
-			"qty": 1,
-			"price": 4500,
-			"profit": 4500,
-			"pickStatus": false,
-			"pickTime": null,
-			"name": "LED 5MM 15 PCS 5 Warna"
+			"name": "Arduino UNO SMD"
 		}
 	],
-	"invoiceID": 2026074207,
-	"counterPick": 1,
-	"counterNotPick": 3,
-	"pidNotPick": [
-		17,
-		6,
-		574
-	],
-	"pidPick": [
-		10
-	]
+	"invoiceID": 2026074299
 }
 
 OTHER RESPONSE

@@ -7,7 +7,7 @@ import {
 } from "../Services/lowJSON.js";
 import { HTTP_STATUS, STATUS } from "../Utils/enum.js";
 import { transformOutput } from "../Utils/utils.js";
-import { invoiceSchema, itemSchema } from "../schema/invoice.output.schema.js";
+import { invoiceSchema } from "../schema/invoice.output.schema.js";
 
 export async function getInvoiceProcess(req, res) {
   //check if request is manual (with invoiceID or without invoiceID)
@@ -207,15 +207,14 @@ export async function updateItemPickStatus(req, res) {
                   pidPick: [],
                 },
               );
-
+              const responseOut = transformOutput(
+                { ...resp, ...addData },
+                invoiceSchema,
+              );
               if (addData.counterPick == items.length) {
-                res
-                  .status(HTTP_STATUS.SUCCESS_COMPLETED)
-                  .json(transformOutput({ ...resp, ...addData }, itemSchema));
+                res.status(HTTP_STATUS.SUCCESS_COMPLETED).json(responseOut);
               } else {
-                res
-                  .status(HTTP_STATUS.SUCCESS)
-                  .json(transformOutput({ ...resp, ...addData }, itemSchema));
+                res.status(HTTP_STATUS.SUCCESS).json(responseOut);
               }
             }
           } else {

@@ -165,7 +165,7 @@
       "reason": null,
       "source": "SHOPEE",
       "invoiceSource": "AUTOMATIC",
-      "status": "DONE",
+      "status": "CREATED",
       "item": [
         {
           "variant": null,
@@ -175,7 +175,9 @@
           "pid": 17,
           "qty": 1,
           "price": 13000,
-          "profit": 13000
+          "profit": 13000,
+          "pickStatus": false,
+          "pickTime": null
         },
         {
           "variant": null,
@@ -185,7 +187,9 @@
           "pid": 6,
           "qty": 8,
           "price": 57500,
-          "profit": 4000
+          "profit": 4000,
+          "pickStatus": false,
+          "pickTime": null
         },
         {
           "variant": null,
@@ -195,7 +199,9 @@
           "pid": 10,
           "qty": 1,
           "price": 97500,
-          "profit": 11000
+          "profit": 11000,
+          "pickStatus": false,
+          "pickTime": null
         },
         {
           "variant": null,
@@ -205,7 +211,9 @@
           "pid": 574,
           "qty": 1,
           "price": 4500,
-          "profit": 4500
+          "profit": 4500,
+          "pickStatus": false,
+          "pickTime": null
         }
       ],
       "sourceInvoiceID": "#260726NMKKDG4M",
@@ -222,7 +230,9 @@
       },
       "invoiceID": 2026074207,
       "__v": 0,
-      "photo": null
+      "photo": null,
+      "pickerName": null,
+      "pickStartTime": null
     },
     {
       "shipping": {
@@ -248,7 +258,7 @@
       "reason": null,
       "source": "SHOPEE",
       "invoiceSource": "AUTOMATIC",
-      "status": "DONE",
+      "status": "PICKING",
       "item": [
         {
           "variant": null,
@@ -285,7 +295,9 @@
       },
       "invoiceID": 2026074219,
       "__v": 0,
-      "photo": null
+      "photo": null,
+      "pickerName": "desi",
+      "pickStartTime": "2026-09-24T15:31:34.629Z"
     }
   ],
   "employee": [
@@ -325,7 +337,10 @@
       },
       "threshold": null,
       "barcode": "0001",
-      "location": ["ETALASE", "GUDANG BELAKANG"]
+      "location": [
+        "ETALASE",
+        "GUDANG BELAKANG"
+      ]
     },
     {
       "tags": null,
@@ -352,7 +367,10 @@
         "tokopedia": "https://www.tokopedia.com/starlectric/tlc5947-24-channel-12-bit-pwm-led-driver"
       },
       "barcode": "0002",
-      "location": ["RAK 7", "GUDANG BELAKANG"]
+      "location": [
+        "RAK 7",
+        "GUDANG BELAKANG"
+      ]
     },
     {
       "tags": null,
@@ -384,7 +402,10 @@
         "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/14yqf6-jual-arduino-uno-r3?keyword="
       },
       "barcode": "0006",
-      "location": ["RAK 5", "GUDANG BELAKANG"]
+      "location": [
+        "RAK 5",
+        "GUDANG BELAKANG"
+      ]
     },
     {
       "tags": null,
@@ -414,7 +435,10 @@
         "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/y25x3y-jual-uno-r3-with-cable-arduino-uno-dip-complatible-atmega328p-dengan-kabel?category_slugs=elektronik%2Fkomponen-elektronik&keyword="
       },
       "barcode": "0010",
-      "location": ["RAK 1", "GUDANG DEPAN"]
+      "location": [
+        "RAK 1",
+        "GUDANG DEPAN"
+      ]
     },
     {
       "tags": null,
@@ -442,7 +466,10 @@
         "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/14k8pl-jual-breadboard-400-tie-point?category_slugs=elektronik%2Fkomponen-elektronik&keyword="
       },
       "barcode": "0017",
-      "location": ["RAK 2", "GUDANG DEPAN"]
+      "location": [
+        "RAK 2",
+        "GUDANG DEPAN"
+      ]
     },
     {
       "tags": [],
@@ -464,7 +491,10 @@
       "bundle": [],
       "__v": 0,
       "barcode": "0574",
-      "location": ["RAK 1", "GUDANG BELAKANG"]
+      "location": [
+        "RAK 1",
+        "GUDANG BELAKANG"
+      ]
     }
   ]
 }

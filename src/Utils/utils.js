@@ -1,4 +1,4 @@
-import { findProductName } from "../Services/lowJSON.js";
+import { findProduct } from "../Services/lowJSON.js";
 
 export function updateItemToPick(items, pid) {
   if (items && Array.isArray(items)) {
@@ -22,8 +22,26 @@ export function transformOutput(data, schema) {
       }
     }
     if (output.item) {
+      const addData = output.item.reduce(
+        (acc, item, index) => {
+          if (item.pickStatus === true) {
+            acc.counterPick++;
+            acc.pidPick.push(item.pid);
+          } else {
+            acc.counterNotPick++;
+            acc.pidNotPick.push(item.pid);
+          }
+          return acc;
+        },
+        {
+          counterPick: 0,
+          counterNotPick: 0,
+          pidNotPick: [],
+          pidPick: [],
+        },
+      );
       output.item = getName(output.item);
-      return output;
+      return { ...output, ...addData };
     } else {
       return output;
     }
@@ -40,16 +58,24 @@ function getName(items) {
   if (items && Array.isArray(items)) {
     const result = items.map((item) => {
       if (item && item.pid) {
-        const name = findProductName(Number(item.pid));
+        const product = findProduct(Number(item.pid));
         if (!item.pickStatus) {
           item.pickStatus = false;
         }
         if (!item.pickTime) {
           item.pickTime = null;
         }
+        let locationString = "";
+        if (product.location && Array.isArray(product.location)) {
+          locationString = product.location.reduce((acc, value) => {
+            acc += value + " ";
+            return acc;
+          }, "");
+        }
         return {
           ...item,
-          name: name,
+          name: product.name,
+          location: locationString.trim(),
         };
       } else {
         return item;

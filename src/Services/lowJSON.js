@@ -101,11 +101,11 @@ export function getBarcodeItem(pid) {
   }
 }
 
-export function findProductName(pid) {
+export function findProduct(pid) {
   if (db) {
     try {
       const res = db.data?.products.find((data) => data.pid === Number(pid));
-      return res.name;
+      return res;
     } catch (err) {}
   }
 }
