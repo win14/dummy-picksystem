@@ -324,7 +324,8 @@
         "tokopedia": "https://www.tokopedia.com/starlectric/tlc5940-constant-current-led-driver"
       },
       "threshold": null,
-      "barcode": "0001"
+      "barcode": "0001",
+      "location": ["ETALASE", "GUDANG BELAKANG"]
     },
     {
       "tags": null,
@@ -350,7 +351,8 @@
       "url": {
         "tokopedia": "https://www.tokopedia.com/starlectric/tlc5947-24-channel-12-bit-pwm-led-driver"
       },
-      "barcode": "0002"
+      "barcode": "0002",
+      "location": ["RAK 7", "GUDANG BELAKANG"]
     },
     {
       "tags": null,
@@ -381,7 +383,8 @@
         "tokopedia": "https://www.tokopedia.com/starlectric/arduino-uno-r3-ch340-clone-kabel-c726",
         "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/14yqf6-jual-arduino-uno-r3?keyword="
       },
-      "barcode": "0006"
+      "barcode": "0006",
+      "location": ["RAK 5", "GUDANG BELAKANG"]
     },
     {
       "tags": null,
@@ -410,7 +413,8 @@
         "tokopedia": "https://www.tokopedia.com/starlectric/uno-r3-with-cable-arduino-uno-complatible-atmega328p-dengan-kabel",
         "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/y25x3y-jual-uno-r3-with-cable-arduino-uno-dip-complatible-atmega328p-dengan-kabel?category_slugs=elektronik%2Fkomponen-elektronik&keyword="
       },
-      "barcode": "0010"
+      "barcode": "0010",
+      "location": ["RAK 1", "GUDANG DEPAN"]
     },
     {
       "tags": null,
@@ -437,7 +441,8 @@
         "tokopedia": "https://www.tokopedia.com/starlectric/breadboard-400-tie-point",
         "bukalapak": "https://www.bukalapak.com/p/elektronik/komponen-elektronik/14k8pl-jual-breadboard-400-tie-point?category_slugs=elektronik%2Fkomponen-elektronik&keyword="
       },
-      "barcode": "0017"
+      "barcode": "0017",
+      "location": ["RAK 2", "GUDANG DEPAN"]
     },
     {
       "tags": [],
@@ -458,7 +463,8 @@
       ],
       "bundle": [],
       "__v": 0,
-      "barcode": "0574"
+      "barcode": "0574",
+      "location": ["RAK 1", "GUDANG BELAKANG"]
     }
   ]
 }
