@@ -26,10 +26,10 @@ export function transformOutput(data, schema) {
         (acc, item, index) => {
           if (item.pickStatus === true) {
             acc.counterPick++;
-            acc.pidPick.push(item.pid);
+            acc.pidPick.push(item);
           } else {
             acc.counterNotPick++;
-            acc.pidNotPick.push(item.pid);
+            acc.pidNotPick.push(item);
           }
           return acc;
         },
