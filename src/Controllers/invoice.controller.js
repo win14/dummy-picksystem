@@ -257,6 +257,14 @@ export async function printInvoiceWithCheck(req, res) {
   const { invoiceID } = req.body;
   const invoiceDetail = getDetailInvoice(invoiceID);
   if (invoiceDetail) {
+    if (invoiceDetail.status && invoiceDetail.status != STATUS.PICKING) {
+      console.log(
+        `[INVOICE] Status invoice ${invoiceID} adalah ${invoiceDetail.status} sehingga tidak bisa print`,
+      );
+      res.status(HTTP_STATUS.BAD_REQUEST).json({});
+      return;
+    }
+
     const items = invoiceDetail.item;
     if (items && Array.isArray(items)) {
       const checkItemStatus = items.reduce(
@@ -277,6 +285,12 @@ export async function printInvoiceWithCheck(req, res) {
         // sudah berhasil tinggal
         console.log(
           `[INVOICE] PRINT BERHASIL Item sudah dicheck semua, lanjut ke print Servis`,
+        );
+        const updateData = updateInvoice(
+          {
+            status: "DONE",
+          },
+          invoiceID,
         );
         res.status(HTTP_STATUS.SUCCESS).json({});
       } else {
