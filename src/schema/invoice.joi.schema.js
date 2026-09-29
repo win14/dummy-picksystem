@@ -12,4 +12,8 @@ const pendingPickingSchema = Joi.object({
   pickerName: Joi.string().required(),
 });
 
-export { checkItemSchema, pendingPickingSchema };
+const checkPrint = Joi.object({
+  invoiceID: Joi.string().min(10).required(),
+});
+
+export { checkItemSchema, pendingPickingSchema, checkPrint };

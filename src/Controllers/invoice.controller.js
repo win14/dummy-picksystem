@@ -252,3 +252,46 @@ export async function updateItemPickStatus(req, res) {
     res.status(HTTP_STATUS.NOT_FOUND).json({});
   }
 }
+
+export async function printInvoiceWithCheck(req, res) {
+  const { invoiceID } = req.body;
+  const invoiceDetail = getDetailInvoice(invoiceID);
+  if (invoiceDetail) {
+    const items = invoiceDetail.item;
+    if (items && Array.isArray(items)) {
+      const checkItemStatus = items.reduce(
+        (acc, item, index) => {
+          if (item.pickStatus === true) {
+            acc.counterPick++;
+          } else {
+            acc.counterNotPick++;
+          }
+          return acc;
+        },
+        {
+          counterPick: 0,
+          counterNotPick: 0,
+        },
+      );
+      if (checkItemStatus.counterPick == items.length) {
+        // sudah berhasil tinggal
+        console.log(
+          `[INVOICE] PRINT BERHASIL Item sudah dicheck semua, lanjut ke print Servis`,
+        );
+        res.status(HTTP_STATUS.SUCCESS).json({});
+      } else {
+        // belum semua
+        console.log(
+          `[INVOICE] PRINT GAGAL, jumlah barang sudah dipick ${checkItemStatus.counterPick}, belum di check ${checkItemStatus.counterNotPick}`,
+        );
+        res.status(HTTP_STATUS.BAD_REQUEST).json({});
+      }
+    } else {
+      console.log(`[INVOICE] Format Item tidak sesuai atau kosong`);
+      res.status(HTTP_STATUS.BAD_REQUEST).json({});
+    }
+  } else {
+    console.log(`[INVOICE] Invoice ID  ${invoiceID} tidak ditemukan`);
+    res.status(HTTP_STATUS.BAD_REQUEST).json({});
+  }
+}
